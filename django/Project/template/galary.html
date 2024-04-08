@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Uploaded Image</title>
+</head>
+<body>
+<form method = "post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Upload</button>
+  <h4>Here is your uploaded image</h4>
+<table style="text-align: center; margin-left: 100px;font-size: medium;">
+
+    <tr>
+        <th>Name</th>
+        <th>Image</th>
+    </tr>
+    {%for x in img%}
+    <tr>
+        <td>{{x.name}}</td>
+        <td><img src="{{x.img.url}}" height="200px" width="200px" class="img-thumbnail"/></td>
+
+    </tr>
+   
+    {%endfor%}
+</table>
+
+</form>
+</body>
+</html>

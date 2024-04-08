@@ -1,0 +1,85 @@
+how to add data,edit data,delete data and search data from given database in django python?
+
+1.python -m django startproject project
+
+2.cd project
+
+3.python manage.py startapp app1
+
+4.then go to setting and find out installed app then
+ add app1.
+5.create model then 
+
+1) question: 
+how to migrate a model
+ in python django?
+
+Solution:
+python manage.py makemigrations 
+python manage.py migrate
+
+python manage.py runserver
+
+#insert data using shell command
+python manage.py shell
+>>from app1.models import Item
+>>Item.objects.create(name="Item #1")
+>>Item.objects.create(name="Item #2")
+>>items=Item.objects.all()
+>>print(items)
+>>exit()
+
+1) question: 
+how to run a python 
+file in visual studio code?
+
+Solution:
+press Ctrl+Shift+p then
+type run python
+
+
+
+
+
+
+
+
+
+
+
+ Github pass Mahbub@54321
+ctrl+c kill terminal
+
+for 2nd time
+
+user
+username=hamza11
+password=mokhles123
+
+
+DATABASES = {
+    'default':{
+        'ENGINE':'mssql',                    # Must be "mssql"
+        'NAME':'sample',                       # DB name "test"
+        'HOST':'DESKTOP-93VCGLR\SQLEXPRESS', # <server>\<instance>
+        'PORT':'',                           # Keep it blank
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    }
+}
+python manage.py migrate
+
+python manage.py runserver
+
+
+
+
+class CountryGDP(models.Model):
+    name=models.CharField(max_length=50)
+    code=models.CharField(max_length=4)
+    year=models.CharField(max_length=5)
+    value=models.DecimalField(max_digits=10,decimal_places=2)
+    
+    def __str__(self):
+      return self.name
